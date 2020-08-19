@@ -4,9 +4,28 @@ Returns: a List of integers
 '''
 def product_of_all_other_numbers(arr):
     # Your code here
+    # factorial function!
+    no_index_arr = [0]*len(arr)
+    factorial_arr = []
+    factorial = 1
+    for i in range(len(arr)-1):
+        # if len(arr) <= 2:
+        #    arr[0], arr[1] = arr[1], arr[0]
+        #    return arr
 
-    pass
+        no_index_arr = arr[:i] + arr[i+1:]
+        for value in no_index_arr:
+            factorial *= value
+        factorial_arr.append(factorial)
+        factorial = 1
 
+    # to include last value:
+    arr.pop()
+    for value in arr:
+        factorial *= value
+    factorial_arr.append(factorial)
+
+    return factorial_arr
 
 if __name__ == '__main__':
     # Use the main function to test your implementation
