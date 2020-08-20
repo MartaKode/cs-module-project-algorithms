@@ -11,8 +11,11 @@ def sliding_window_max(nums, k):
     # keep track of our max_vals array
     max_vals = []
 
+    # iterate through the array of nums
     for i in range(len(nums)-1):
+        # make a window array for each position
         window = nums[i:i+k]
+        # if our windows length is k, add it to arrays of max vals
         if len(window) == k:
             max_vals.append(max(window))
 
@@ -25,3 +28,33 @@ if __name__ == '__main__':
     k = 3
     print(
         f"Output of sliding_window_max function is: {sliding_window_max(arr, k)}")
+
+'''DAY 2'''
+
+
+# def sliding_window_max(nums, k):
+#     # Your code here
+#     # keep track of what our window is
+#     window_arr = []
+#     # keep track of our max_vals array
+#     max_vals = []
+
+#     for i in range(len(nums)-1):
+#         window = nums[i:i+k]
+#         if len(window) == k:
+#             window_arr.append(window)
+
+
+#     for i in range(len(window_arr)):
+#         max_vals.append(max(window_arr[i]))
+
+#     return max_vals
+    
+
+
+# if __name__ == '__main__':
+#     # Use the main function here to test out your implementation
+#     arr = [1, 3, -1, -3, 5, 3, 6, 7]
+#     k = 3
+#     print(
+#         f"Output of sliding_window_max function is: {sliding_window_max(arr, k)}")
